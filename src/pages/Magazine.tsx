@@ -5,10 +5,34 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Magazine = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const isArabic = language === 'ar';
   const [selectedCategory, setSelectedCategory] = useState('All Articles');
+
+  const content = {
+    en: {
+      title: 'Health Informatics',
+      titleHighlight: 'Magazine',
+      subtitle: 'Insights on AI, digital transformation, and innovation in healthcare',
+      allArticles: 'All Articles',
+      readArticle: 'Read Article',
+      source: 'Source:',
+    },
+    ar: {
+      title: 'مجلة',
+      titleHighlight: 'المعلوماتية الصحية',
+      subtitle: 'رؤى حول الذكاء الاصطناعي والتحول الرقمي والابتكار في الرعاية الصحية',
+      allArticles: 'جميع المقالات',
+      readArticle: 'قراءة المقال',
+      source: 'المصدر:',
+    }
+  };
+
+  const t = content[isArabic ? 'ar' : 'en'];
 
   const categories = [
     'All Articles',
@@ -155,7 +179,7 @@ const Magazine = () => {
   ];
 
   // Filter articles based on selected category
-  const filteredArticles = selectedCategory === 'All Articles'
+  const filteredArticles = (selectedCategory === 'All Articles' || selectedCategory === t.allArticles)
     ? articles
     : articles.filter(article => article.category === selectedCategory);
 
@@ -168,10 +192,10 @@ const Magazine = () => {
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-16 text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Health Informatics <span className="bg-gradient-primary bg-clip-text text-transparent">Magazine</span>
+              {t.title} <span className="bg-gradient-primary bg-clip-text text-transparent">{t.titleHighlight}</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Insights on AI, digital transformation, and innovation in healthcare
+              {t.subtitle}
             </p>
           </div>
 
@@ -185,7 +209,7 @@ const Magazine = () => {
                 className="rounded-full"
                 onClick={() => setSelectedCategory(category)}
               >
-                {category}
+                {category === 'All Articles' ? t.allArticles : category}
               </Button>
             ))}
           </div>
@@ -224,17 +248,17 @@ const Magazine = () => {
                       <span>{article.readTime}</span>
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      Source: {article.source}
+                      {t.source} {article.source}
                     </div>
                   </div>
 
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="w-full text-primary hover:text-primary group-hover:translate-x-1 transition-transform"
+                    className={`w-full text-primary hover:text-primary transition-transform ${isArabic ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}
                   >
-                    Read Article
-                    <ArrowRight className="ml-2 w-3 h-3" />
+                    {t.readArticle}
+                    <ArrowRight className={isArabic ? "mr-2 w-3 h-3" : "ml-2 w-3 h-3"} />
                   </Button>
                 </div>
               </Card>

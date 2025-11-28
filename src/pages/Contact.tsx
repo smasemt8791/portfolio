@@ -55,7 +55,7 @@ const Contact = () => {
       formEmail: 'البريد الإلكتروني',
       formEmailPlaceholder: 'your.email@example.com',
       formMessage: 'الرسالة',
-      formMessagePlaceholder: 'أخبرني عن مشروعك أو استفسارك...',
+      formMessagePlaceholder: 'شاركني مشكوراً رأيك واقتراحاتك أو استفساراتك...',
       sendButton: 'إرسال الرسالة',
       successMessage: 'تم إرسال الرسالة! سأتواصل معك قريباً.',
     }

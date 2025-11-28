@@ -3,14 +3,47 @@ import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Smartphone } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Portfolio = () => {
+  const { language } = useLanguage();
+  const isArabic = language === 'ar';
+
+  const content = {
+    en: {
+      title: 'My',
+      titleHighlight: 'Portfolio',
+      subtitle: 'Progressive Web Applications built for healthcare excellence',
+      keyFeatures: 'Key Features:',
+      technologies: 'Technologies:',
+      visitDemo: 'Visit Demo',
+    },
+    ar: {
+      title: '',
+      titleHighlight: 'الأعمال',
+      subtitle: 'تطبيقات ويب تقدمية مبنية للتميز في الرعاية الصحية',
+      keyFeatures: 'الميزات الرئيسية:',
+      technologies: 'التقنيات:',
+      visitDemo: 'زيارة العرض التجريبي',
+    }
+  };
+
+  const t = content[isArabic ? 'ar' : 'en'];
+
   const apps = [
     {
       id: 1,
-      name: 'BP Calculator',
-      description: 'A specialized tool for monitoring and calculating blood pressure metrics, designed to assist healthcare professionals and individuals in tracking cardiovascular health.',
-      features: [
+      name: isArabic ? 'حاسبة ضغط الدم' : 'BP Calculator',
+      description: isArabic
+        ? 'أداة متخصصة لمراقبة وحساب مقاييس ضغط الدم، مصممة لمساعدة المتخصصين في الرعاية الصحية والأفراد في تتبع صحة القلب والأوعية الدموية.'
+        : 'A specialized tool for monitoring and calculating blood pressure metrics, designed to assist healthcare professionals and individuals in tracking cardiovascular health.',
+      features: isArabic ? [
+        'تصنيف ضغط الدم',
+        'تتبع السجل',
+        'مؤشرات بصرية',
+        'توصيات صحية',
+        'إمكانيات التصدير',
+      ] : [
         'Blood pressure categorization',
         'History tracking',
         'Visual indicators',
@@ -23,9 +56,17 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      name: 'Mini HIMS',
-      description: 'A compact Hospital Information Management System designed to streamline patient records, appointments, and basic clinical workflows for smaller healthcare facilities.',
-      features: [
+      name: isArabic ? 'نظام إدارة المستشفيات المصغر' : 'Mini HIMS',
+      description: isArabic
+        ? 'نظام مدمج لإدارة معلومات المستشفى مصمم لتبسيط سجلات المرضى والمواعيد وسير العمل السريري الأساسي للمرافق الصحية الصغيرة.'
+        : 'A compact Hospital Information Management System designed to streamline patient records, appointments, and basic clinical workflows for smaller healthcare facilities.',
+      features: isArabic ? [
+        'إدارة سجلات المرضى',
+        'جدولة المواعيد',
+        'الملاحظات السريرية',
+        'التقارير الأساسية',
+        'واجهة سهلة الاستخدام',
+      ] : [
         'Patient record management',
         'Appointment scheduling',
         'Clinical notes',
@@ -38,9 +79,17 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      name: 'Fitness Health Calculator Suite',
-      description: 'A comprehensive suite of health and fitness calculators including BMI, BMR, and other vital metrics to support personal health goals and monitoring.',
-      features: [
+      name: isArabic ? 'مجموعة حاسبات الصحة واللياقة' : 'Fitness Health Calculator Suite',
+      description: isArabic
+        ? 'مجموعة شاملة من حاسبات الصحة واللياقة البدنية بما في ذلك مؤشر كتلة الجسم ومعدل الأيض الأساسي والمقاييس الحيوية الأخرى لدعم الأهداف الصحية الشخصية والمراقبة.'
+        : 'A comprehensive suite of health and fitness calculators including BMI, BMR, and other vital metrics to support personal health goals and monitoring.',
+      features: isArabic ? [
+        'حاسبة مؤشر كتلة الجسم',
+        'حاسبة معدل الأيض الأساسي',
+        'نسبة دهون الجسم',
+        'تقدير احتياجات السعرات الحرارية',
+        'تتبع التقدم',
+      ] : [
         'BMI Calculator',
         'BMR Calculator',
         'Body Fat Percentage',
@@ -62,10 +111,10 @@ const Portfolio = () => {
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-16 text-center animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              My <span className="bg-gradient-primary bg-clip-text text-transparent">Portfolio</span>
+              {t.title} <span className="bg-gradient-primary bg-clip-text text-transparent">{t.titleHighlight}</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Progressive Web Applications built for healthcare excellence
+              {t.subtitle}
             </p>
           </div>
 
@@ -102,7 +151,7 @@ const Portfolio = () => {
 
                     {/* Features */}
                     <div>
-                      <h3 className="font-semibold mb-3">Key Features:</h3>
+                      <h3 className="font-semibold mb-3">{t.keyFeatures}</h3>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {app.features.map((feature, i) => (
                           <li key={i} className="flex items-center gap-2">
@@ -115,7 +164,7 @@ const Portfolio = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h3 className="font-semibold mb-3">Technologies:</h3>
+                      <h3 className="font-semibold mb-3">{t.technologies}</h3>
                       <div className="flex flex-wrap gap-2">
                         {app.technologies.map((tech) => (
                           <span
@@ -133,8 +182,8 @@ const Portfolio = () => {
                       className="shadow-elegant"
                       onClick={() => window.open(app.demoUrl, '_blank')}
                     >
-                      <ExternalLink className="mr-2 w-4 h-4" />
-                      Visit Demo
+                      <ExternalLink className={isArabic ? "ml-2 w-4 h-4" : "mr-2 w-4 h-4"} />
+                      {t.visitDemo}
                     </Button>
                   </div>
                 </div>

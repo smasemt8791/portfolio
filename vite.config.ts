@@ -6,7 +6,8 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // CRITICAL FIX: The base path MUST be set to your repository name for GitHub Project Pages
-  base: "/HIhub/", 
+  // CHANGED FROM "/HIhub/" TO "/portfolio/"
+  base: "/portfolio/", 
   server: {
     host: "::",
     port: 8080,

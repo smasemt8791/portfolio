@@ -57,7 +57,7 @@ const Navigation = () => {
             {!isArabic ? (
               <>
                 <img
-                  src="/images/site_logo.png"
+                  src="images/site_logo.png"
                   alt="Health Informatics Hub Logo"
                   className="w-10 h-10 object-contain transition-smooth group-hover:scale-110"
                 />
@@ -73,7 +73,7 @@ const Navigation = () => {
                   <span className="text-blue-500">واحة</span> المعلوماتية الصحية
                 </span>
                 <img
-                  src="/images/site_logo.png"
+                  src="images/site_logo.png"
                   alt="شعار واحة المعلوماتية الصحية"
                   className="w-10 h-10 object-contain transition-smooth group-hover:scale-110"
                 />

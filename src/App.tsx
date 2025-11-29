@@ -22,7 +22,7 @@ const App = () => (
         <WaterRipple />
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/HIhub">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />

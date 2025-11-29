@@ -81,6 +81,9 @@ All colors MUST be HSL.
 
     --border: 220 26% 18%;
     --input: 220 26% 18%;
+  }
+
+  body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
     /* Subtle grid pattern for light mode */
@@ -106,6 +109,13 @@ All colors MUST be HSL.
   h5,
   h6 {
     @apply font-bold tracking-tight;
+  }
+
+  /* Prevent horizontal overflow on all screen sizes */
+  html,
+  body {
+    @apply overflow-x-hidden;
+    max-width: 100vw;
   }
 }
 

@@ -15,32 +15,33 @@ const Hero = () => {
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
 
           {/* Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
-            {t('hero.title')}
-          </h1>
+          <h1
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 ${isArabic ? 'font-cairo' : ''}`}
+            dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+          />
 
           {/* Subtitle */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               {t('hero.subtitle')}
             </span>
           </h2>
 
           {/* Description */}
-          <p className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto ${isArabic ? 'leading-loose' : 'leading-relaxed'}`}>
+          <p className={`text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 ${isArabic ? 'leading-loose' : 'leading-relaxed'}`}>
             {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 w-full sm:w-auto px-4 sm:px-0">
             <Button
               size="lg"
               onClick={() => navigate('/portfolio')}
@@ -67,7 +68,7 @@ const Hero = () => {
           </div>
 
           {/* Stats or highlights grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-8 sm:pt-12 max-w-3xl mx-auto px-4">
             {[
               t('highlights.healthInformatics'),
               t('highlights.pwa'),

@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         arabic: ['"Scheherazade New"', 'serif'],
+        cairo: ['"Cairo"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

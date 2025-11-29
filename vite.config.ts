@@ -5,13 +5,17 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // CRITICAL FIX: The base path MUST be set to your repository name for GitHub Project Pages
-  // CHANGED FROM "/HIhub/" TO "/portfolio/"
+  // CORRECT base path for GitHub Pages
   base: "/portfolio/", 
   server: {
     host: "::",
     port: 8080,
   },
+  // ADDED: This tells Vite to output files to the 'docs' folder for GitHub Pages.
+  build: {
+    outDir: 'docs', 
+  },
+  // --- rest of config ---
   plugins: [react()].filter(Boolean),
   resolve: {
     alias: {

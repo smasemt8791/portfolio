@@ -44,7 +44,7 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(174 72% 56%));
     --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(174 72% 56% / 0.1));
-    
+
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(217 91% 60% / 0.2);
     --shadow-glow: 0 0 40px hsl(217 91% 70% / 0.3);
@@ -81,26 +81,10 @@ All colors MUST be HSL.
 
     --border: 220 26% 18%;
     --input: 220 26% 18%;
-    --ring: 217 91% 65%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(174 72% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 65% / 0.1), hsl(174 72% 60% / 0.1));
-    
-    --shadow-elegant: 0 10px 40px -10px hsl(217 91% 65% / 0.3);
-    --shadow-glow: 0 0 40px hsl(217 91% 75% / 0.4);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
     /* Subtle grid pattern for light mode */
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(214 32% 91% / 0.3) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(214 32% 91% / 0.3) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -109,13 +93,18 @@ All colors MUST be HSL.
 
   .dark body {
     /* Subtle dot pattern for dark mode */
-    background-image: 
+    background-image:
       radial-gradient(circle at 1px 1px, hsl(220 26% 18% / 0.4) 1px, transparent 0);
     background-size: 40px 40px;
     background-position: 0 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
 }

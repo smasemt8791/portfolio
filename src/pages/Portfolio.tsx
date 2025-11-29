@@ -52,7 +52,7 @@ const Portfolio = () => {
       ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
       demoUrl: 'https://smasemt8791.github.io/BP_-calculator/',
-      image: 'images/bp-calculator.png'
+      image: isArabic ? 'images/BP_Monitor_ar.png' : 'images/BP_Monitor.png'
     },
     {
       id: 2,
@@ -75,7 +75,7 @@ const Portfolio = () => {
       ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
       demoUrl: 'https://smasemt8791.github.io/Mini_HIMS/',
-      image: 'images/mini-hims.png'
+      image: isArabic ? 'images/Mini_HIMS_Demo_ar.png' : 'images/Mini_HIMS_Demo.png'
     },
     {
       id: 3,
@@ -98,7 +98,7 @@ const Portfolio = () => {
       ],
       technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
       demoUrl: 'https://smasemt8791.github.io/fitness_health_calculator_suite/',
-      image: 'images/fitness-suite.png'
+      image: isArabic ? 'images/Fitness_Health_Calculator_Suite_ar.png' : 'images/Fitness_Health_Calculator_Suite.png'
     },
   ];
 

@@ -48,7 +48,7 @@ const translations = {
   ar: {
     // Navigation
     'nav.home': 'الرئيسية',
-    'nav.about': 'عن المؤلف',
+    'nav.about': 'عني',
     'nav.portfolio': 'الأعمال',
     'nav.magazine': 'المجلة',
     'nav.contact': 'اتصل بنا',
@@ -78,7 +78,7 @@ const translations = {
     'featured.viewDemo': 'عرض تجريبي',
 
     // Footer
-    'footer.copyright': '© 2025 مركز المعلوماتية الصحية. جميع الحقوق محفوظة.',
+    'footer.copyright': '© 2025 واحة المعلوماتية الصحية. جميع الحقوق محفوظة.',
     'footer.quickLinks': 'روابط سريعة',
   },
 };

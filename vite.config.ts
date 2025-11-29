@@ -11,11 +11,8 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  // ADDED: This tells Vite to output files to the 'docs' folder for GitHub Pages.
-  build: {
-    outDir: 'docs', 
-  },
-  // --- rest of config ---
+  // BUILD property is REMOVED
+  
   plugins: [react()].filter(Boolean),
   resolve: {
     alias: {

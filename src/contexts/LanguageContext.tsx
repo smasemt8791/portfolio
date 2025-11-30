@@ -55,7 +55,7 @@ const translations = {
     'nav.resume': 'السيرة الذاتية',
 
     // Hero
-    'hero.title': 'مرحبا بكم في واحة<br><br>المعلوماتية الصحية',
+    'hero.title': '<div class="mb-6">مرحبا بكم في <span class="text-blue-500">واحة</span></div><div>المعلوماتية الصحية</div>',
     'hero.subtitle': 'معكم محمد الشهري إخصائي معلوماتية صحية و مطور برمجيات متكاملة',
     'hero.description': '11+ سنة خبرة | مطور تطبيقات ويب تقدمية | مبتكر الذكاء الاصطناعي للرعاية الصحية',
     'hero.viewPortfolio': 'عرض الأعمال',

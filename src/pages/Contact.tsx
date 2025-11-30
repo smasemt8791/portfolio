@@ -23,14 +23,6 @@ const Contact = () => {
       linkedin: 'LinkedIn',
       linkedinDesc: 'Connect on LinkedIn',
       linkedinButton: 'View Profile',
-      formName: 'Name',
-      formNamePlaceholder: 'Your name',
-      formEmail: 'Email',
-      formEmailPlaceholder: 'your.email@example.com',
-      formMessage: 'Message',
-      formMessagePlaceholder: 'Tell me about your project or inquiry...',
-      sendButton: 'Send Message',
-      successMessage: "Message sent! I'll get back to you soon.",
     },
     ar: {
       title: 'تواصل',
@@ -45,14 +37,6 @@ const Contact = () => {
       linkedin: 'لينكد إن',
       linkedinDesc: 'تواصل عبر لينكد إن',
       linkedinButton: 'عرض الملف الشخصي',
-      formName: 'الاسم',
-      formNamePlaceholder: 'اسمك',
-      formEmail: 'البريد الإلكتروني',
-      formEmailPlaceholder: 'your.email@example.com',
-      formMessage: 'الرسالة',
-      formMessagePlaceholder: 'شاركني مشكوراً رأيك واقتراحاتك أو استفساراتك...',
-      sendButton: 'إرسال الرسالة',
-      successMessage: 'تم إرسال الرسالة! سأتواصل معك قريباً.',
     }
   };
 
